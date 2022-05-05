@@ -14,13 +14,13 @@ streamlit.dataframe(my_fruit_list)
 my_fruit_list = my_fruit_list.set_index('Fruit')
 
 #adding fruits to pick in a list 
-streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado', 'Strawberries'])
+fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado', 'Strawberries'])
 
 #add the dataframe for the fruit list 
 streamlit.dataframe(my_fruit_list)
 
 #creating the variable for the fruits selected in the database 
-fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado', 'Strawberries'])
+
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 #displays the fruit selected in the list and added to that database 
