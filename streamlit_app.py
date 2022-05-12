@@ -26,7 +26,9 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 #displays the fruit selected in the list and added to that database 
 streamlit.dataframe(fruits_to_show)
 
-streamlit.header('fruityvice Fruit Advice!')
+streamlit.header('Fruityvice Fruit Advice!')
+fruit_choice = streamlit.text_input("what fruit would you like information about?", 'Kiwi')
+streamlit.write('The user entered', fruit_choice)
 
 import requests 
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
